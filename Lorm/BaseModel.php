@@ -319,7 +319,7 @@ abstract class BaseModel
     if (($og_pk = (!empty($primary_key) && $use_pk === true)) || ($new_pk = is_string($use_pk))) {
       $pk = $og_pk === true && ($new_pk ?? false) === false ? $primary_key : $use_pk;
       $q->where($pk, "=", $og_data[$pk]);
-      fprintf(STDERR,  $q->decode_query() . "\n");
+      // fprintf(STDERR,  $q->decode_query() . "\n");
       return QueryExecutor::execute($q->decode_query());
     }
 
@@ -328,7 +328,7 @@ abstract class BaseModel
       $where_data[] = [$k, $e];
 
     $q->where_all($where_data);
-    fprintf(STDERR,  $q->decode_query() . "\n");
+    // fprintf(STDERR,  $q->decode_query() . "\n");
 
     return QueryExecutor::execute($q->decode_query());
   }

@@ -11,7 +11,7 @@ return [
   /**
    * Contains the folder of views
    */
-  "folder" => "../views",
+  "folder" => "../../app/views",
 
   /**
    * Contains the folder for compiled views
